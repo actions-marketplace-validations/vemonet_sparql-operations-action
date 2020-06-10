@@ -4,6 +4,22 @@ Use Docker Image from https://github.com/MaastrichtU-IDS/d2s-sparql-operations
 
 ## Usage
 
+### Execute Insert queries using local folder
+
+```yaml
+- uses: MaastrichtU-IDS/sparql-operations-action@v1
+  with:
+    file: folder-with-rq-files/
+    endpoint: https://graphdb.dumontierlab.com/repositories/test-vincent/statements
+    user: ${{ secrets.GRAPHDB_USER }}
+    password: ${{ secrets.GRAPHDB_PASSWORD }}
+    inputvar: https://w3id.org/d2s/graph/geonames
+    outputvar: https://w3id.org/d2s/metadata
+    servicevar: http://localhost:7200/repositories/test-vincent
+```
+
+> All `.rq` files in the provided folder will be executed.
+
 ### Execute Insert queries using GitHub URL
 
 ```yaml
