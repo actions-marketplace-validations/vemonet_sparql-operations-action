@@ -33,4 +33,5 @@ fi
 
 echo "${COMMAND}"
 
-exec "${COMMAND}"
+# exec "${COMMAND}"
+eval "${COMMAND}"
