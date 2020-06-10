@@ -31,4 +31,6 @@ if [ ! -z "${INPUT_SERVICEVAR}" ]; then
     COMMAND="${COMMAND} --var-service ${INPUT_SERVICEVAR}"
 fi
 
+echo "${COMMAND}"
+
 exec "${COMMAND}"
