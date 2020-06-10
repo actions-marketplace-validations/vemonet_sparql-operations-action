@@ -7,7 +7,7 @@ if [ ! -z "${INPUT_FILE}" ]; then
 fi
 
 if [ ! -z "${INPUT_QUERY}" ]; then
-    COMMAND="${COMMAND} -sp ${INPUT_QUERY}"
+    COMMAND="${COMMAND} -sp '${INPUT_QUERY}'"
 fi
 
 if [ ! -z "${INPUT_USER}" ]; then
