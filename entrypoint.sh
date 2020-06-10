@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMMAND="/app/d2s-sparql-operations.jar -ep ${INPUT_ENDPOINT}"
+COMMAND="java -jar /app/d2s-sparql-operations.jar -ep ${INPUT_ENDPOINT}"
 
 if [ ! -z "${INPUT_FILE}" ]; then
     COMMAND="${COMMAND} --filepath ${INPUT_FILE}"
@@ -31,5 +31,4 @@ if [ ! -z "${INPUT_SERVICEVAR}" ]; then
     COMMAND="${COMMAND} --var-service ${INPUT_SERVICEVAR}"
 fi
 
-java -jar ${COMMAND}
-
+exec "$COMMAND"
