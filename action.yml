@@ -25,14 +25,14 @@ inputs:
     description: 'Password used for SPARQL endpoint authentication'
     required: false
   operation:
-    description: 'SPARQL query operation (update, construct, select, split). Default is update'
+    description: 'SPARQL query operation (update, construct, select, upload, split). Default is update'
     required: false
     default: 'update'
   inputvar:
     description: 'Input graph URI variable to replace in the SPARQL query. E.g.: https://w3id.org/d2s/input'
     required: false
   outputvar:
-    description: 'Output graph URI variable to replace in the SPARQL query. E.g.: https://w3id.org/d2s/output'
+    description: 'Output graph URI to upload RDF to, or to be replaced in the SPARQL query. E.g.: https://w3id.org/d2s/output'
     required: false
   servicevar:
     description: 'A SPARQL service URL variable to replace in the SPARQL query. E.g.: http://localhost:7200/repositories/test'
