@@ -1,13 +1,12 @@
 #!/bin/sh
 
-COMMAND="java -jar /app/d2s-sparql-operations.jar -ep ${INPUT_ENDPOINT}"
+COMMAND="java -jar /app/d2s-sparql-operations.jar -e ${INPUT_ENDPOINT}"
 
 if [ ! -z "${INPUT_FILE}" ]; then
-    COMMAND="${COMMAND} --filepath ${INPUT_FILE}"
+    COMMAND="${COMMAND} --input ${INPUT_FILE}"
 fi
-
 if [ ! -z "${INPUT_QUERY}" ]; then
-    COMMAND="${COMMAND} -sp '${INPUT_QUERY}'"
+    COMMAND="${COMMAND} --query '${INPUT_QUERY}'"
 fi
 
 if [ ! -z "${INPUT_USER}" ]; then
@@ -20,6 +19,9 @@ fi
 if [ ! -z "${INPUT_OPERATION}" ]; then
     COMMAND="${COMMAND} --operation ${INPUT_OPERATION}"
 fi
+if [ ! -z "${INPUT_GRAPH}" ]; then
+    COMMAND="${COMMAND} --graph ${INPUT_GRAPH}"
+fi
 
 if [ ! -z "${INPUT_INPUTVAR}" ]; then
     COMMAND="${COMMAND} --var-input ${INPUT_INPUTVAR}"
@@ -30,7 +32,5 @@ fi
 if [ ! -z "${INPUT_SERVICEVAR}" ]; then
     COMMAND="${COMMAND} --var-service ${INPUT_SERVICEVAR}"
 fi
-
-# echo "${COMMAND}"
 
 eval "${COMMAND}"

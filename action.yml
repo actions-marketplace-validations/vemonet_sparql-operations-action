@@ -28,6 +28,9 @@ inputs:
     description: 'SPARQL query operation (update, construct, select, upload, split). Default is update'
     required: false
     default: 'update'
+  graph:
+    description: 'Graph URI used in some operations (e.g. to upload to a specific graph)'
+    required: false
   inputvar:
     description: 'Input graph URI variable to replace in the SPARQL query. E.g.: https://w3id.org/d2s/input'
     required: false
