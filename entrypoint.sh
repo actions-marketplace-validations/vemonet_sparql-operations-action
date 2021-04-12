@@ -1,6 +1,6 @@
 #!/bin/sh
 
-COMMAND="java -jar /app/d2s-sparql-operations.jar -e ${INPUT_ENDPOINT}"
+COMMAND="java -jar /app/sparql-operations.jar -e ${INPUT_ENDPOINT}"
 
 if [ ! -z "${INPUT_FILE}" ]; then
     COMMAND="${COMMAND} --input ${INPUT_FILE}"
